@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorials/features/profile_card.dart';
+import 'package:flutter_tutorials/features/common_widgets/list_view.dart';
+import 'package:flutter_tutorials/features/common_widgets/list_view_builder.dart';
+import 'package:flutter_tutorials/features/common_widgets/profile_card.dart';
+import 'package:flutter_tutorials/features/common_widgets/seperated_listview.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const ProfileCard(),
+      home: const SeperatedListview(),
     );
   }
 }

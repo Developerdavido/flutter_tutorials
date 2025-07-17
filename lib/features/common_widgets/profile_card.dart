@@ -54,6 +54,7 @@ class ProfileCard extends StatelessWidget {
             SizedBox(height: 20),
             Row(
               mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(Icons.email, color: Colors.white),
                 SizedBox(width: 10),
@@ -68,6 +69,9 @@ class ProfileCard extends StatelessWidget {
     );
   }
 
-  //Practice will be to
-  //Recreate the layout but align content to the left and use a Stack to place a badge over the profile image.
+  ///Practice will be to
+  ///Task 1Recreate the layout but align content to the left and use a Stack to place a badge over the profile image.
+  ///Task 2: Build a custom navigation bar using a Row:
+  ///•	3 icons spaced evenly
+  ///•	Each icon has a text label below (use a Column inside the Row)
 }
