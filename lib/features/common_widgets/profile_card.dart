@@ -8,12 +8,7 @@ class ProfileCard extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueGrey[900],
       //the center widget aligns a widget to the center of the page
-      body: Column(
-        //mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize:
-            MainAxisSize
-                .max, // this ensures that the column will only be as large as its contents
+      body: Stack(
         children: [
           //circular image => Containers, ImageWidget, CircleAvatar,
           //three types of images
@@ -34,73 +29,97 @@ class ProfileCard extends StatelessWidget {
           // ),
 
           //Image.asset('assets/images/john_wick.jpg', height: 120, width: 120),
-          Stack(
-            children: [
-              Column(
-                children: [
-                  CircleAvatar(
-                    radius: 60,
-                    backgroundImage: AssetImage('assets/images/john_wick.jpg'),
-                  ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Stack(
+              children: [
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CircleAvatar(
+                      radius: 60,
+                      backgroundImage: AssetImage(
+                        'assets/images/john_wick.jpg',
+                      ),
+                    ),
 
-                  // name of person,
-                  Text(
-                    "John Wick",
-                    style: TextStyle(fontSize: 24, color: Colors.white),
+                    // name of person,
+                    Text(
+                      "John Wick",
+                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    ),
+                    //title of person,
+                    Text(
+                      "Serial Hitman/Boogeyman",
+                      style: TextStyle(fontSize: 16, color: Colors.grey[300]),
+                    ),
+                    //socials and contacts of person
+                    SizedBox(height: 20),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.email, color: Colors.white),
+                        SizedBox(width: 10),
+                        Icon(Icons.phone, color: Colors.white),
+                        SizedBox(width: 10),
+                        Icon(Icons.link, color: Colors.white),
+                      ],
+                    ),
+                  ],
+                ),
+                Container(
+                  margin: EdgeInsetsGeometry.fromLTRB(10, 0, 0, 0),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  //title of person,
-                  Text(
-                    "Serial Hitman/Boogeyman",
-                    style: TextStyle(fontSize: 16, color: Colors.grey[300]),
+                  child: Text(
+                    '900 Kills',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                   ),
-                  //socials and contacts of person
-                  SizedBox(height: 20),
-                  Row(
+                ),
+              ],
+            ),
+          ),
+          Align(
+            alignment: AlignmentDirectional.bottomEnd,
+            child: Container(
+              // height: kBottomNavigationBarHeight,
+              padding: EdgeInsets.only(bottom: 20, top: 10),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Column(
                     mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.email, color: Colors.white),
-                      SizedBox(width: 10),
-                      Icon(Icons.phone, color: Colors.white),
-                      SizedBox(width: 10),
-                      Icon(Icons.link, color: Colors.white),
+                      Icon(Icons.home_rounded, color: Colors.amberAccent),
+                      Text('Home'),
+                    ],
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [Icon(Icons.post_add), Text('Post Bounty')],
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.wallet_giftcard_rounded),
+                      Text('Balance'),
                     ],
                   ),
                 ],
               ),
-              Container(
-                margin: EdgeInsetsGeometry.fromLTRB(10, 0, 0, 0),
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.amberAccent,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Text(
-                  '900 Kills',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-                ),
-              ),
-            ],
-          ),
-          Positioned(
-            bottom: 20,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  children: [
-                    Icon(Icons.home_rounded, color: Colors.amberAccent),
-                    Text('Home'),
-                  ],
-                ),
-                Column(children: [Icon(Icons.post_add), Text('Post Bounty')]),
-                Column(
-                  children: [
-                    Icon(Icons.wallet_giftcard_rounded),
-                    Text('Balance'),
-                  ],
-                ),
-              ],
             ),
           ),
         ],
