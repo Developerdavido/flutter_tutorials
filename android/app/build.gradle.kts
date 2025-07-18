@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "app.dartvada.flutter_tutorials"
+    namespace = "com.example.flutter_tuts"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -21,7 +21,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "app.dartvada.flutter_tutorials"
+        applicationId = "com.example.flutter_tuts"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion

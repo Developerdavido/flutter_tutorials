@@ -1,6 +1,6 @@
-# flutter_tutorials
+# flutter_tuts
 
-A new Flutter tutorials project.
+A new Flutter project.
 
 ## Getting Started
 
