@@ -85,8 +85,24 @@ class _UserInputWidgetsState extends State<UserInputWidgets> {
                 },
                 child: Text("Click me", style: TextStyle(color: Colors.black)),
               ),
-
               //outlinebutton
+              // OutlinedButton(
+              //   style: OutlinedButton.styleFrom(
+              //     backgroundColor: Colors.transparent,
+              //     foregroundColor: Colors.black,
+              //     shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(12),
+              //     ),
+              //   ),
+              //   onPressed: () {},
+              //   child: Text("Tap me"),
+              //   //TextButton
+              // ),
+              // SizedBox(height: 12),
+              // TextButton(
+              //   onPressed: () {},
+              //   child: Text("Tap me", style: TextStyle(color: Colors.white)),
+              // ),
             ],
           ),
         ),
