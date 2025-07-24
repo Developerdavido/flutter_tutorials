@@ -116,6 +116,7 @@ class _SignUpState extends State<SignUp> {
                       },
                     ),
                     // SizedBox(height: 2),
+                    //Remember me checkbox
                     Row(
                       children: [
                         Checkbox(
