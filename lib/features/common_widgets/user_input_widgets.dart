@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:developer';
 
 class UserInputWidgets extends StatefulWidget {
   const UserInputWidgets({super.key});
@@ -51,8 +52,8 @@ class _UserInputWidgetsState extends State<UserInputWidgets> {
                   hintStyle: TextStyle(color: Colors.white),
                 ),
                 onChanged: (value) {
-                  print(value);
-                  print("This is the controller value: ${_controller.text}");
+                  log(value);
+                  log("This is the controller value: ${_controller.text}");
                 },
                 validator: (value) {
                   if (value == null || value.isEmpty) {

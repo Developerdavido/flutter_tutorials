@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:developer';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -72,8 +73,8 @@ class _SignUpState extends State<SignUp> {
                         hintStyle: TextStyle(color: Colors.white),
                       ),
                       onChanged: (value) {
-                        print(value);
-                        print("This is the username: ${_userName.text}");
+                        log(value);
+                        log("This is the username: ${_userName.text}");
                       },
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -118,8 +119,8 @@ class _SignUpState extends State<SignUp> {
                         // ),
                       ),
                       onChanged: (value) {
-                        print(value);
-                        print("This is the password value: ${_password.text}");
+                        log(value);
+                        log("This is the password value: ${_password.text}");
                       },
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -140,7 +141,7 @@ class _SignUpState extends State<SignUp> {
                           onChanged: (bool? newValue) {
                             setState(() {
                               rememberMe = newValue ?? false;
-                              print("Remember Me: $rememberMe");
+                              log("Remember Me: $rememberMe");
                             });
                           },
                         ),
