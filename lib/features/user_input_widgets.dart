@@ -54,8 +54,8 @@ class _UserInputWidgetsState extends State<UserInputWidgets> {
                   hintStyle: TextStyle(color: Colors.white),
                 ),
                 onChanged: (value) {
-                  print(value);
-                  print("this is the controller value: ${_controller.text}");
+                  // print(value);
+                  // print("this is the controller value: ${_controller.text}");
                 },
                 validator: (value) {
                   if(value == null || value.isEmpty){
