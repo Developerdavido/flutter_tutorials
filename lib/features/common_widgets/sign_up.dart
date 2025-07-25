@@ -9,6 +9,7 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   bool rememberMe = false;
+  bool _obscurePassword = true;
   final TextEditingController _userName = TextEditingController();
   final TextEditingController _password = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -40,7 +41,7 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(width: 8),
                 Text(
                   "Log in to Spotify",
-                  style: TextStyle(fontSize: 35, color: Colors.black),
+                  style: TextStyle(fontSize: 30, color: Colors.black),
                 ),
               ],
             ),
@@ -53,6 +54,7 @@ class _SignUpState extends State<SignUp> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     //Username textfield
+                    SizedBox(height: 8),
                     TextFormField(
                       controller: _userName,
                       style: TextStyle(color: Colors.white),
@@ -83,10 +85,11 @@ class _SignUpState extends State<SignUp> {
                         return null;
                       },
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 15),
                     //password textfield
                     TextFormField(
                       controller: _password,
+                      obscureText: _obscurePassword,
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         filled: true,
@@ -100,6 +103,19 @@ class _SignUpState extends State<SignUp> {
                         ),
                         hintText: "Enter your password",
                         hintStyle: TextStyle(color: Colors.white),
+                        // suffixIcon: IconButton(
+                        //   icon: Icon(
+                        //     _obscurePassword
+                        //         ? Icons.visibility_off
+                        //         : Icons.visibility,
+                        //     color: Colors.white,
+                        //   ),
+                        //   onPressed: () {
+                        //     setState(() {
+                        //       _obscurePassword = !_obscurePassword;
+                        //     });
+                        //   },
+                        // ),
                       ),
                       onChanged: (value) {
                         print(value);
@@ -115,7 +131,7 @@ class _SignUpState extends State<SignUp> {
                         return null;
                       },
                     ),
-                    // SizedBox(height: 2),
+                    SizedBox(height: 8),
                     //Remember me checkbox
                     Row(
                       children: [
@@ -135,7 +151,7 @@ class _SignUpState extends State<SignUp> {
                       ],
                     ),
                     //elevated button
-                    SizedBox(height: 12),
+                    //SizedBox(height: 2),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromARGB(255, 82, 194, 86),

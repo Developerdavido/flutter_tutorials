@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tuts/features/common_widgets/sign_up.dart';
 // import 'package:flutter_tuts/features/common_widgets/profile_card.dart';
 // import 'package:flutter_tuts/features/common_widgets/lists_view.dart';
-import 'package:flutter_tuts/features/common_widgets/user_input_widgets.dart';
 
 void main() {
   runApp(const MyApp());
