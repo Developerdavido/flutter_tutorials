@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tuts/features/common_widgets/contact_list.dart';
+import 'package:flutter_tuts/features/common_widgets/navigation/screen_one.dart';
 import 'package:flutter_tuts/features/user_input_widgets.dart';
+import 'package:flutter_tuts/providers/counter_provider.dart';
+import 'package:provider/provider.dart';
 // import 'package:flutter_tuts/features/common_widgets/profile_card.dart';
 // import 'package:flutter_tuts/features/common_widgets/lists_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(create: (BuildContext context) => CounterProvider(),
+  child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -34,7 +38,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const UserInputWidgets(),
+      home: const ScreenOne(),
     );
   }
 }

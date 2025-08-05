@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tuts/features/common_widgets/navigation/screen_two.dart';
+import 'package:flutter_tuts/providers/counter_provider.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -7,14 +10,24 @@ class ScreenOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text("Screen One", style: TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),),
-          ElevatedButton(onPressed: (){}, child: Text("Move Screen"), )
-        ],
-      ),
+    return Consumer<CounterProvider>(
+      builder: (context, counterProvider, child) {
+        return Scaffold(
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text("Counter: ${counterProvider.counter}", style: TextStyle(color: Colors.black, fontSize: 44, fontWeight: FontWeight.bold),),
+
+                ElevatedButton(onPressed: (){
+                  counterProvider.increment();
+                }, child: Text("Increment"), )
+              ],
+            ),
+          ),
+        );
+      }
     );
   }
 }
