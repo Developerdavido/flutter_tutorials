@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorials/features/common_widgets/list_view.dart';
-import 'package:flutter_tutorials/features/common_widgets/list_view_builder.dart';
-import 'package:flutter_tutorials/features/common_widgets/profile_card.dart';
-import 'package:flutter_tutorials/features/common_widgets/seperated_listview.dart';
+import 'package:flutter_tuts/features/common_widgets/contact_list.dart';
+import 'package:flutter_tuts/features/user_input_widgets.dart';
+// import 'package:flutter_tuts/features/common_widgets/profile_card.dart';
+// import 'package:flutter_tuts/features/common_widgets/lists_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const SeperatedListview(),
+      home: const UserInputWidgets(),
     );
   }
 }
